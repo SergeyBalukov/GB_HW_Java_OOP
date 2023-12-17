@@ -1,24 +1,14 @@
-package ex3;
+package model;
 
-public class Student implements Comparable<Student> {
-    private int studentId;
+public abstract class User {
     private String firstName;
     private String secondName;
     private String lastName;
 
-    public Student(int studentId, String firstName, String secondName, String lastName) {
-        this.studentId = studentId;
+    public User(String firstName, String secondName, String lastName) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.lastName = lastName;
-    }
-
-    public int getStudentId() {
-        return studentId;
-    }
-
-    public void setStudentId(int studentId) {
-        this.studentId = studentId;
     }
 
     public String getFirstName() {
@@ -47,20 +37,10 @@ public class Student implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studentId=" + studentId +
-                ", firstName='" + firstName + '\'' +
+        return "User{" +
+                "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
-    }
-
-    @Override
-    public int compareTo(Student o) {
-        if(o.getStudentId() > studentId)
-            return -1;
-        if(o.getStudentId() < studentId)
-            return 1;
-        return 0;
     }
 }

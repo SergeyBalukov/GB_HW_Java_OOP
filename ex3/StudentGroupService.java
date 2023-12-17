@@ -1,5 +1,10 @@
 package ex3;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+
 public class StudentGroupService {
     private StudentGroup students;
 
@@ -17,5 +22,10 @@ public class StudentGroupService {
                 students.remove(studentItem);
             }
         }
+    }
+    public List<Student> getSortedStudentGroup(){
+        List<Student> students1 = new ArrayList<>(students.getStudents());
+        Collections.sort(students1);
+        return students1;
     }
 }
